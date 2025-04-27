@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  total_recall:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - total_recall_data:/data
+    environment:
+      - ENV_FILE=.env
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - total_recall_network
+
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=totalrecall
+    restart: unless-stopped
+    networks:
+      - total_recall_network
+
+networks:
+  total_recall_network:
+    driver: bridge
+
+volumes:
+  total_recall_data:
+  postgres_data:
