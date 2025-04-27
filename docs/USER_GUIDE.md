@@ -1,150 +1,155 @@
-# Total Recall User Guide
+# User Guide
 
-## Introduction
-
-Total Recall is a powerful tool that automatically extracts your historical ChatGPT conversations and injects them into GPT's persistent memory. This allows your AI assistant to remember and reference your past interactions, providing a more personalized and contextually aware experience.
+This guide provides instructions for using the Total Recall application to extract your ChatGPT conversations and inject them into GPT's memory.
 
 ## Getting Started
 
-### Installation
+After installing the application (see [Installation Guide](INSTALLATION.md)), you can access it through your web browser.
 
-Total Recall can be installed and run using Docker, which makes the setup process simple and consistent across different environments.
+## Logging In
 
-#### Prerequisites
+1. Navigate to the application URL (typically http://localhost:8000 for Docker installation or http://localhost:3000 for local installation)
+2. You'll be presented with a login screen
+3. Enter your ChatGPT credentials (email and password)
+4. Click "Login to ChatGPT"
 
-- Docker (version 20.10.0 or later)
-- Docker Compose (version 2.0.0 or later)
+![Login Screen](../assets/login_screen.png)
 
-#### Installation Steps
+**Note**: Your credentials are only used to authenticate with ChatGPT and are never stored by the application.
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd total-recall
-   ```
+## Viewing Your Conversations
 
-2. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   # Edit .env file with your configuration
-   ```
+After successful login, you'll be taken to the Conversations page where you can:
 
-3. Deploy the application:
-   ```bash
-   ./deploy.sh
-   ```
+1. View a list of all your ChatGPT conversations
+2. Sort conversations by date, title, or length
+3. Search for specific conversations by keyword
+4. Select conversations for processing and memory injection
 
-4. Access the application:
-   - The application will be available at http://localhost:8000
+![Conversations List](../assets/conversations_list.png)
 
-### First-Time Setup
+## Viewing Conversation Details
 
-When you first access Total Recall, you'll need to:
+Click on any conversation to view its details:
 
-1. Log in with your OpenAI session token
-2. Allow the application to retrieve your conversation history
-3. Configure your processing and memory injection preferences
+1. The full conversation thread between you and ChatGPT
+2. Conversation metadata (date, time, number of messages)
+3. Options for processing and memory injection
 
-## Features
+![Conversation Details](../assets/conversation_details.png)
 
-### Conversation Retrieval
+## Processing Conversations
 
-Total Recall can retrieve all your ChatGPT conversations, allowing you to:
+Before injecting conversations into memory, you may want to process them:
 
-- View your entire conversation history in one place
-- Search for specific conversations by content or date
-- Filter conversations based on various criteria
-- Preview conversation content before processing
+1. Select one or more conversations from the list
+2. Click the "Process" button
+3. Configure processing options:
+   - Chunk Size: How to split long conversations (default: 1000 characters)
+   - Chunk Overlap: How much overlap between chunks (default: 200 characters)
+   - Summarize: Whether to generate a summary (default: enabled)
+4. Click "Start Processing"
 
-### Conversation Processing
+![Processing Options](../assets/processing_options.png)
 
-Once your conversations are retrieved, Total Recall processes them to prepare for memory injection:
+Processing happens in the background and may take some time for multiple or long conversations. You can check the status in the Processing tab.
 
-- Chunks conversations into manageable pieces
-- Summarizes long conversations (optional)
-- Formats conversations for optimal memory injection
-- Tracks processing progress in real-time
+## Injecting Conversations into Memory
 
-### Memory Injection
+After processing (or directly from the conversation list), you can inject conversations into GPT's memory:
 
-The core feature of Total Recall is injecting your processed conversations into GPT's persistent memory:
+1. Select one or more processed conversations
+2. Click the "Inject Memory" button
+3. Configure injection options:
+   - Injection Method: Direct (immediate) or Background (for multiple conversations)
+   - Include Summary: Whether to include the generated summary
+   - Memory Prompt: Customize how GPT should remember the conversation
+4. Click "Start Injection"
 
-- Control the rate of memory injection
-- Monitor injection progress
-- Pause and resume injection as needed
-- Verify successful memory injection
+![Injection Options](../assets/injection_options.png)
 
-### Direct Memory Injection
+## Verifying Memory Injection
 
-For immediate results, Total Recall offers a direct memory injection option:
+To verify that GPT has successfully stored the conversation in memory:
 
-- Inject specific conversations directly into the current session
-- Immediately test if the AI remembers the injected conversations
-- Bypass the background task system for faster results
+1. Navigate to the "Verification" tab
+2. Select a conversation that was injected
+3. Ask a question about the conversation to test recall
+4. GPT should be able to reference details from the injected conversation
 
-## Using the Interface
+![Memory Verification](../assets/memory_verification.png)
 
-### Authentication Page
+## Managing Memory
 
-The authentication page is where you'll enter your OpenAI session token:
+The "Memory Management" tab allows you to:
 
-1. Enter your token in the provided field
-2. Toggle visibility to verify your token
-3. Check "Remember Me" to save your token for future sessions
-4. Click "Authenticate" to proceed
+1. View all conversations currently in GPT's memory
+2. See when they were injected and their status
+3. Remove conversations from memory if needed
+4. Prioritize certain memories over others
 
-### Main Interface
+![Memory Management](../assets/memory_management.png)
 
-The main interface is organized as a step-by-step wizard:
+## Settings
 
-1. **Conversation Retrieval**: View and select conversations
-2. **Processing**: Configure and monitor conversation processing
-3. **Verification**: Review processed conversations
-4. **Memory Injection**: Configure and monitor memory injection
+The Settings page allows you to customize:
 
-### Settings
+1. UI preferences (dark/light mode, layout)
+2. Processing defaults (chunk size, summarization)
+3. Injection defaults (method, prompts)
+4. Session management (timeout, refresh)
 
-Total Recall offers various settings to customize your experience:
+![Settings](../assets/settings.png)
 
-- **Processing Settings**: Configure chunking and summarization options
-- **Injection Settings**: Set rate limits and retry options
-- **Display Settings**: Toggle between light and dark mode
-- **Export Settings**: Configure export formats and options
+## Logging Out
 
-## Troubleshooting
+To log out of the application:
 
-### Common Issues
+1. Click on your profile icon in the top right
+2. Select "Logout"
+3. Confirm logout when prompted
 
-1. **Authentication Failures**:
-   - Ensure your OpenAI session token is valid and current
-   - Try logging out and back in to OpenAI to get a fresh token
-
-2. **Conversation Retrieval Issues**:
-   - Check your internet connection
-   - Verify you have access to the conversations in your OpenAI account
-
-3. **Processing or Injection Failures**:
-   - Check the error messages for specific issues
-   - Try reducing the rate limit for memory injection
-   - Process fewer conversations at once
-
-### Getting Help
-
-If you encounter issues not covered in this guide:
-
-1. Check the error logs in the application
-2. Refer to the troubleshooting section in the documentation
-3. Contact support with details about your issue
+This will end your session and remove any temporary data from the browser.
 
 ## Privacy and Security
 
-Total Recall takes your privacy seriously:
+Total Recall is designed with privacy and security in mind:
 
-- Your OpenAI session token is stored securely and only used to access your conversations
-- All data processing happens locally on your machine
-- No conversation data is sent to third-party servers
-- You can delete all stored data at any time through the settings
+- Your ChatGPT credentials are never stored
+- Session data is stored only in your browser
+- No conversation data is sent to third parties
+- All processing happens locally or through direct ChatGPT API calls
 
-## Conclusion
+## Troubleshooting
 
-Total Recall enhances your AI experience by giving your assistant access to your conversation history. By following this guide, you'll be able to set up and use Total Recall effectively, creating a more personalized and contextually aware AI assistant.
+### Login Issues
+
+- Ensure your ChatGPT credentials are correct
+- If you use two-factor authentication, you may need to generate an app password
+- Check your internet connection
+
+### Conversation Retrieval Issues
+
+- If conversations aren't loading, try refreshing the page
+- Very old conversations may take longer to retrieve
+- If you have thousands of conversations, pagination may be required
+
+### Memory Injection Issues
+
+- Very long conversations may need to be chunked into smaller pieces
+- GPT has memory limitations and may not retain all details
+- If injection fails, try processing with smaller chunk sizes
+
+### General Issues
+
+- Clear your browser cache and cookies
+- Ensure you're using a supported browser (Chrome, Firefox, Edge)
+- Check the application logs for error messages
+
+## Getting Help
+
+If you encounter issues not covered in this guide:
+
+1. Check the [GitHub repository](https://github.com/k3ss-official/Total-Recall) for updates
+2. Review open and closed issues for similar problems
+3. Submit a new issue with detailed information about your problem
