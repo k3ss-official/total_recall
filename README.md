@@ -57,11 +57,16 @@ Total Recall allows users to:
 ## Getting Started
 
 ### Prerequisites
-- Python 3.9+
-- Node.js 16+
-- Rust (for Tauri)
+- Python 3.9+ (3.12+ recommended)
+- Conda environment manager
+- Node.js 16+ (for GUI, coming soon)
+- Rust (for Tauri, coming soon)
 
 ### Installation
+
+#### Automated Setup (Recommended)
+
+We provide a setup script that handles environment creation and dependency installation:
 
 1. Clone this repository:
    ```bash
@@ -69,24 +74,41 @@ Total Recall allows users to:
    cd total-recall
    ```
 
-2. Install dependencies:
+2. Run the setup script:
    ```bash
-   # Install Python dependencies
-   pip install -r requirements.txt
+   ./setup.sh
+   ```
    
-   # Install Node.js dependencies
-   npm install
+   The script will:
+   - Check if you're in the correct directory
+   - Prompt to create a new conda environment or use an existing one
+   - Install all dependencies with proper flags
+   - Verify the installation
+
+3. Activate your environment before using Total Recall:
+   ```bash
+   conda activate total_recall  # Or your custom environment name
    ```
 
-3. Run the CLI tools:
+#### Manual Installation
+
+If you prefer manual installation:
+
+1. Clone this repository:
    ```bash
-   # View available commands
-   python -m src.cli.token_debugger --help
+   git clone https://github.com/k3ss-official/total-recall.git
+   cd total-recall
    ```
 
-4. (Coming soon) Build the GUI application:
+2. Create and activate a conda environment:
    ```bash
-   npm run tauri build
+   conda create -n total_recall python=3.12
+   conda activate total_recall
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install --force-reinstall --no-cache-dir -r requirements.txt
    ```
 
 ## Usage
@@ -105,6 +127,9 @@ python -m src.cli.endpoint_tester test-endpoints
 
 # Chunking engine
 python -m src.cli.chunker_engine process --file conversations.json
+
+# Recall testing
+python -m src.cli.recall_tester ask-question --query "What did we discuss about AI safety?" --file memory_file.json
 ```
 
 ### GUI Usage (Coming Soon)
@@ -134,7 +159,9 @@ total_recall/
 ├── tests/                # Test suite
 │   ├── unit/             # Unit tests
 │   └── integration/      # Integration tests
-└── public/               # Public assets
+├── public/               # Public assets
+├── setup.sh              # Environment setup script
+└── requirements.txt      # Python dependencies
 ```
 
 ## Development
