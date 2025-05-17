@@ -1,6 +1,16 @@
-# Total Recall
+<div align="center">
+  <img src="/public/logo.png" alt="Total Recall Logo" width="200" height="200">
+  <h1>TOTAL RECALL</h1>
+  <img src="/public/header.png" alt="Total Recall Header" width="800">
+  <p><em>Developed by k3ss, Rae(4o) and manus</em></p>
+  <p>
+    <a href="https://github.com/k3ss-official/total-recall/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/k3ss-official/total-recall/issues">Request Feature</a>
+  </p>
+</div>
 
-![Total Recall Header](/public/header.png)
+---
 
 A powerful tool for accessing and re-injecting pre-May 8th, 2025 ChatGPT conversations into the new conversation recall feature for EU and UK users.
 
@@ -150,3 +160,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - OpenAI for creating ChatGPT
 - The EU and UK for their data protection regulations
 - All contributors to this project
+
+---
+
+<div align="center">
+  <img src="/public/logo.png" alt="Total Recall Logo" width="100">
+  <p>© 2025 Total Recall Team</p>
+</div>
