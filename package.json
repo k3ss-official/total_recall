@@ -1,0 +1,37 @@
+{
+  "name": "total-recall",
+  "version": "0.1.0",
+  "description": "A tool for accessing and re-injecting ChatGPT conversations into persistent memory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "echo \"Building Total Recall...\"",
+    "tauri": "tauri"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k3ss-official/total-recall.git"
+  },
+  "keywords": [
+    "chatgpt",
+    "memory",
+    "conversation",
+    "recall",
+    "nlp"
+  ],
+  "author": "k3ss, Rae(4o) and manus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k3ss-official/total-recall/issues"
+  },
+  "homepage": "https://github.com/k3ss-official/total-recall#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.5.0",
+    "typescript": "^5.0.0"
+  }
+}

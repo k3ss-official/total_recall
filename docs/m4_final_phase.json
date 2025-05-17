@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "title": "Total Recall – M4 Phase UX & Memory Injection Plan",
+    "created_by": "rae",
+    "version": "2.0",
+    "date_created": "2025-05-17",
+    "phase": "M4 – GUI + Memory Integration",
+    "marker": "TRT-M4-final",
+    "status": "CLI complete, GUI build initiated"
+  },
+  "m4_objectives": [
+    "Transition from CLI to full graphical app (Tauri preferred)",
+    "Design UI to support entire backload pipeline",
+    "Verify GPT-4o session context before injecting memory",
+    "Guide user from login → scrape → process → inject",
+    "Enable confirmation inside GPT session post-backload"
+  ],
+  "phases": [
+    {
+      "phase": "1. GUI Framework Launch",
+      "details": [
+        "Init layout: Dashboard, Timeline, Recall Map, Backload Tray",
+        "Auth bar with live session status",
+        "Left nav for navigation across flows"
+      ]
+    },
+    {
+      "phase": "2. GPT-4o Session Detection",
+      "details": [
+        "Use ChatGPT endpoint to confirm active 4o session",
+        "Fallback message if 3.5 or inactive",
+        "UX feedback: badge indicator for GPT-4o status"
+      ]
+    },
+    {
+      "phase": "3. Conversation Discovery & NLP",
+      "details": [
+        "Detect all user conversations starting from earliest date",
+        "NLP processing: threads, clustering, markers, importance",
+        "Output clean GPT-ingestible JSON"
+      ]
+    },
+    {
+      "phase": "4. Chunking & Prep",
+      "details": [
+        "Apply token-safe chunking with semantic boundaries",
+        "Bundle chunks + metadata into final memory objects",
+        "Show summary: total chunks, memory size, projects"
+      ]
+    },
+    {
+      "phase": "5. Memory Injection",
+      "details": [
+        "User clicks 'Backload Now'",
+        "Inject memory using preferred method (copy/paste, agent, API)",
+        "Confirm backload accepted with GPT echo"
+      ]
+    }
+  ],
+  "final_notes_for_manus": {
+    "message": "CLI tools are complete. This app now moves to full GUI. Only inject memory after confirming GPT-4o session is active. All formatting must follow Rae's spec."
+  }
+}
