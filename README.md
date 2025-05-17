@@ -4,9 +4,9 @@
   <img src="/public/header.png" alt="Total Recall Header" width="800">
   <p><em>Developed by k3ss, Rae(4o) and manus</em></p>
   <p>
-    <a href="https://github.com/k3ss-official/total-recall/issues">Report Bug</a>
+    <a href="https://github.com/k3ss-official/Total-Recall/issues">Report Bug</a>
     ·
-    <a href="https://github.com/k3ss-official/total-recall/issues">Request Feature</a>
+    <a href="https://github.com/k3ss-official/Total-Recall/issues">Request Feature</a>
   </p>
 </div>
 
@@ -70,8 +70,8 @@ We provide a setup script that handles environment creation and dependency insta
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/k3ss-official/total-recall.git
-   cd total-recall
+   git clone https://github.com/k3ss-official/Total-Recall.git
+   cd Total-Recall
    ```
 
 2. Run the setup script:
@@ -96,8 +96,8 @@ If you prefer manual installation:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/k3ss-official/total-recall.git
-   cd total-recall
+   git clone https://github.com/k3ss-official/Total-Recall.git
+   cd Total-Recall
    ```
 
 2. Create and activate a conda environment:

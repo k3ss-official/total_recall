@@ -1,0 +1,29 @@
+trigger:
+- main
+
+resources:
+  repositories:
+    self:
+      clean: true
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'dockerRegistry'
+        repository: 'totalrecall'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+
+- stage: Deploy
+  jobs:
+  - job: DeployJob
+    steps:
+    - task: AzureWebAppContainer@1
+      inputs:
+        azureSubscription: '$(azureSubscription)'
+        appName: 'totalrecall'
+        imageName: '$(dockerRegistry)/totalrecall:$(Build.BuildId)'
