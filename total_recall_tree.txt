@@ -1,0 +1,204 @@
+.
+├── api
+│   └── app
+│       ├── api
+│       │   ├── endpoints
+│       │   │   ├── auth.py
+│       │   │   ├── chatgpt_auth.js
+│       │   │   ├── conversations.js
+│       │   │   ├── conversations.py
+│       │   │   ├── direct_injection.py
+│       │   │   ├── export.py
+│       │   │   ├── injection.js
+│       │   │   ├── injection.py
+│       │   │   ├── processing.js
+│       │   │   ├── processing.py
+│       │   │   └── websocket.py
+│       │   ├── main.js
+│       │   └── main.py
+│       └── models
+│           └── schemas.py
+├── backend
+│   └── api
+├── deploy.sh
+├── docker-compose.yml
+├── Dockerfile
+├── docs
+│   ├── API_DOCUMENTATION.md
+│   ├── architecture.md
+│   ├── AUTHENTICATION_FLOW.md
+│   ├── CONVERSATION_PROCESSING.md
+│   ├── INSTALLATION.md
+│   ├── INTEGRATION.md
+│   ├── m4_final_phase.json
+│   ├── readme.md
+│   ├── roadmap.md
+│   ├── TRT-feature
+│   │   └── gui_list.md
+│   └── USER_GUIDE.md
+├── environment.yml
+├── firebase
+├── frontend
+│   ├── documentation.md
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── pnpm-lock.yaml
+│   ├── README.md
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── App.tsx
+│   │   ├── assets
+│   │   │   └── react.svg
+│   │   ├── components
+│   │   │   ├── AuthenticationPage.js
+│   │   │   ├── ChatGPTLoginForm.js
+│   │   │   ├── ConversationProcessingStatus.js
+│   │   │   ├── ConversationRetrievalStatus.js
+│   │   │   ├── ConversationViewer.js
+│   │   │   ├── ErrorComponents.js
+│   │   │   ├── MainApp.js
+│   │   │   ├── MainPage.js
+│   │   │   ├── MemoryInjectionStatus.js
+│   │   │   ├── OpenAILoginForm.js
+│   │   │   └── ui
+│   │   │       ├── accordion.tsx
+│   │   │       ├── alert-dialog.tsx
+│   │   │       ├── alert.tsx
+│   │   │       ├── aspect-ratio.tsx
+│   │   │       ├── avatar.tsx
+│   │   │       ├── badge.tsx
+│   │   │       ├── breadcrumb.tsx
+│   │   │       ├── button.tsx
+│   │   │       ├── calendar.tsx
+│   │   │       ├── card.tsx
+│   │   │       ├── carousel.tsx
+│   │   │       ├── chart.tsx
+│   │   │       ├── checkbox.tsx
+│   │   │       ├── collapsible.tsx
+│   │   │       ├── command.tsx
+│   │   │       ├── context-menu.tsx
+│   │   │       ├── dialog.tsx
+│   │   │       ├── drawer.tsx
+│   │   │       ├── dropdown-menu.tsx
+│   │   │       ├── form.tsx
+│   │   │       ├── hover-card.tsx
+│   │   │       ├── input-otp.tsx
+│   │   │       ├── input.tsx
+│   │   │       ├── label.tsx
+│   │   │       ├── menubar.tsx
+│   │   │       ├── navigation-menu.tsx
+│   │   │       ├── pagination.tsx
+│   │   │       ├── popover.tsx
+│   │   │       ├── progress.tsx
+│   │   │       ├── radio-group.tsx
+│   │   │       ├── resizable.tsx
+│   │   │       ├── scroll-area.tsx
+│   │   │       ├── select.tsx
+│   │   │       ├── separator.tsx
+│   │   │       ├── sheet.tsx
+│   │   │       ├── sidebar.tsx
+│   │   │       ├── skeleton.tsx
+│   │   │       ├── slider.tsx
+│   │   │       ├── sonner.tsx
+│   │   │       ├── switch.tsx
+│   │   │       ├── table.tsx
+│   │   │       ├── tabs.tsx
+│   │   │       ├── textarea.tsx
+│   │   │       ├── toast.tsx
+│   │   │       ├── toaster.tsx
+│   │   │       ├── toggle-group.tsx
+│   │   │       ├── toggle.tsx
+│   │   │       └── tooltip.tsx
+│   │   ├── context
+│   │   │   ├── AuthContext.js
+│   │   │   ├── ConversationContext.js
+│   │   │   ├── ErrorContext.js
+│   │   │   ├── InjectionContext.js
+│   │   │   ├── ProcessingContext.js
+│   │   │   └── VerificationContext.js
+│   │   ├── hooks
+│   │   │   ├── use-mobile.tsx
+│   │   │   └── use-toast.ts
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── lib
+│   │   │   ├── api.js
+│   │   │   └── utils.ts
+│   │   ├── main.tsx
+│   │   └── vite-env.d.ts
+│   ├── tsconfig.json
+│   └── vite.config.ts
+├── global
+├── install_conda.sh
+├── install_docker.sh
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── PROJECT_SUMMARY.md
+├── public
+│   ├── header.png
+│   └── logo.png
+├── README.md
+├── requirements.txt
+├── run_test_suite.sh
+├── run_tests.py
+├── setup.sh
+├── src
+│   └── cli
+│       ├── chunker_engine.py
+│       ├── endpoint_tester.py
+│       ├── recall_tester.py
+│       └── token_debugger.py
+├── tests
+│   └── tests
+│       ├── api
+│       │   └── endpoints
+│       │       ├── test_auth_endpoints.py
+│       │       ├── test_conversation_endpoints.py
+│       │       ├── test_direct_injection_endpoints.py
+│       │       ├── test_injection_endpoints.py
+│       │       └── test_processing_endpoints.py
+│       ├── conftest.py
+│       ├── frontend
+│       │   ├── __mocks__
+│       │   │   ├── fileMock.js
+│       │   │   └── styleMock.js
+│       │   ├── components
+│       │   │   ├── test_conversation_detail.js
+│       │   │   ├── test_conversation_list.js
+│       │   │   ├── test_conversation_search.js
+│       │   │   ├── test_login_form.js
+│       │   │   ├── test_logout_button.js
+│       │   │   ├── test_main_page.js
+│       │   │   ├── test_memory_injection_interface.js
+│       │   │   ├── test_processing_status.js
+│       │   │   └── test_token_manager.js
+│       │   └── setupTests.js
+│       ├── integration
+│       │   └── flows
+│       │       ├── test_authentication_flow.py
+│       │       ├── test_complete_end_to_end_flow.py
+│       │       ├── test_conversation_retrieval_flow.py
+│       │       ├── test_export_flow.py
+│       │       ├── test_injection_flow.py
+│       │       └── test_processing_flow.py
+│       ├── mock_data
+│       │   ├── generate_conversations.py
+│       │   ├── generate_processed_data.py
+│       │   └── generate_users.py
+│       └── unit
+│           └── services
+│               ├── test_auth_service.py
+│               ├── test_conversation_export_service.py
+│               ├── test_conversation_processing_service.py
+│               ├── test_conversation_retrieval_service.py
+│               ├── test_direct_memory_injection_service.py
+│               ├── test_error_handling_service.py
+│               ├── test_memory_injection_service.py
+│               ├── test_playwright_auth_service.py
+│               └── test_progress_tracking_service.py
+└── total_recall_tree.txt
+
+35 directories, 167 files
